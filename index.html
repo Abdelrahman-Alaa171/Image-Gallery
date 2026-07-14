@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Image Gallery Pro — explore curated photography across Nature, Cars, Animals, and City." />
+  <title>Image Gallery Pro</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ── HEADER ─────────────────────────────────────────────────── -->
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="#" class="logo" aria-label="Image Gallery Pro home">
+        <span class="logo-mark">✦</span>
+        <span class="logo-text">Gallery<em>Pro</em></span>
+      </a>
+      <p class="header-tagline">Curated photography in four worlds</p>
+    </div>
+  </header>
+
+  <!-- ── HERO ───────────────────────────────────────────────────── -->
+  <section class="hero" aria-label="Gallery introduction">
+    <h1 class="hero-title">See the world<br /><em>differently.</em></h1>
+    <p class="hero-sub">Browse 12 handpicked photographs across Nature, Cars, Animals, and City.</p>
+  </section>
+
+  <!-- ── CONTROLS ───────────────────────────────────────────────── -->
+  <section class="controls" aria-label="Filter and search">
+    <div class="controls-inner">
+
+      <div class="filter-group" role="group" aria-label="Category filters">
+        <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="nature">Nature</button>
+        <button class="filter-btn" data-filter="cars">Cars</button>
+        <button class="filter-btn" data-filter="animals">Animals</button>
+        <button class="filter-btn" data-filter="city">City</button>
+      </div>
+
+      <div class="search-wrap">
+        <label for="search-input" class="visually-hidden">Search images by title</label>
+        <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+          <circle cx="11" cy="11" r="8" /><line x1="21" y1="21" x2="16.65" y2="16.65" />
+        </svg>
+        <input
+          type="search"
+          id="search-input"
+          class="search-input"
+          placeholder="Search by title…"
+          autocomplete="off"
+          spellcheck="false"
+        />
+        <button class="search-clear" id="search-clear" aria-label="Clear search" hidden>✕</button>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ── GALLERY ────────────────────────────────────────────────── -->
+  <main class="gallery-section" id="gallery-section">
+    <p class="results-count" id="results-count" aria-live="polite"></p>
+    <div class="gallery-grid" id="gallery-grid" role="list" aria-label="Image gallery"></div>
+    <div class="empty-state" id="empty-state" hidden aria-live="polite">
+      <span class="empty-icon">⌕</span>
+      <h2>No images found</h2>
+      <p>Try a different keyword or select another category.</p>
+      <button class="reset-btn" id="reset-btn">Reset filters</button>
+    </div>
+  </main>
+
+  <!-- ── LIGHTBOX ───────────────────────────────────────────────── -->
+  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Image viewer" hidden>
+    <div class="lightbox-backdrop" id="lightbox-backdrop"></div>
+
+    <div class="lightbox-panel">
+      <header class="lb-header">
+        <span class="lb-counter" id="lb-counter"></span>
+        <button class="lb-close" id="lb-close" aria-label="Close lightbox">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="18" y1="6" x2="6" y2="18" /><line x1="6" y1="6" x2="18" y2="18" />
+          </svg>
+        </button>
+      </header>
+
+      <div class="lb-image-wrap">
+        <button class="lb-nav lb-prev" id="lb-prev" aria-label="Previous image">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polyline points="15 18 9 12 15 6" />
+          </svg>
+        </button>
+        <img class="lb-image" id="lb-image" src="" alt="" loading="lazy" />
+        <button class="lb-nav lb-next" id="lb-next" aria-label="Next image">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polyline points="9 18 15 12 9 6" />
+          </svg>
+        </button>
+      </div>
+
+      <footer class="lb-footer">
+        <span class="lb-category" id="lb-category"></span>
+        <h2 class="lb-title" id="lb-title"></h2>
+      </footer>
+    </div>
+  </div>
+
+  <!-- ── FOOTER ─────────────────────────────────────────────────── -->
+  <footer class="site-footer">
+    <p>Image Gallery Pro &mdash; Frontend Development Project</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
